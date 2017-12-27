@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+
+  # Ebben az alkonyvtarban vagyunk, ezt
+  # figyelembe kell venni az atirasoknal
+  RewriteBase /
+
+  # Minden nemletezo oldal webcimet iranyitsuk at az index.php-re
+
+
+RewriteEngine On
+
+RewriteRule ^([^/]*)\.html$ /index.php?content=$1 [L]
+RewriteRule ^([^/]*)/([^/]*)\.html$ /index.php?content=$1&sub_cont=$2 [L]
+RewriteRule ^([^/]*)/([^/]*)/([^/]*)\.html$ /index.php?content=$1&sub_cont=$2&macro_cont=$3&nano_cont=$4 [L]
+
+
+
+</IfModule>
+
